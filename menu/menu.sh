@@ -1,4 +1,13 @@
 #!/bin/bash
+# COLOR VALIDATION
+clear
+w="\033[97m"  # Putih
+y="\033[93m"  # Kuning
+r="\033[91m"  # Merah
+u="\033[35m"  # Ungu
+c="\033[96m"  # Cyan
+g="\033[92m"  # Hijau
+NC="\033[0m"  # Tanpa Warna
 MYIP=$(curl -sS ifconfig.me)
 echo "Checking VPS"
 clear
@@ -89,16 +98,15 @@ echo -e "\033[1;36m│\033[38;5;208m 🌐 DOMAIN          : $(cat /etc/xray/doma
 echo -e "\033[1;36m│\033[38;5;208m ⏳ UPTIME          : $(uptime -p | cut -d " " -f 2-10)\033[0m\033[1;36m \033[0m"
 echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
 echo -e   ""
-function Service_Status() {
 echo -e "\033[1;35m╭─────────────────────────────────────────────────╮\033[0m"
 echo -e "\033[1;35m│\033[0m\e[38;5;200m PROXY :\e[0m $status_haproxy  \e[0m│\e[38;5;202m NGINX :\e[0m $status_nginx  \e[0m│\e[38;5;208m SSHWS :\e[0m $status_ws_epro \e[0m│ $status_dropbear  \e[96;1m│\033[0m"
 echo -e "\033[1;35m╰─────────────────────────────────────────────────╯\033[0m"
-}
 echo -e   ""
 echo -e "\033[1;36m╭─────────────────────────────────────────────╮\033[0m"
 echo -e "\033[1;36m│\033[0m \033[1;97m\033[45m            RAM INFO              \033[0m\033[1;36m│\033[0m"
 echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
 echo -e ""
+1;36m╭─────────────────────────────────────────────╮\033[0m"
 echo -e "\e[1;32m RAM USED   \e[0m: $uram MB"	
 echo -e "\e[1;32m RAM TOTAL  \e[0m: $tram MB"
 echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
