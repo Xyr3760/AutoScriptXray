@@ -1,6 +1,8 @@
 #!/bin/bash
-# COLOR VALIDATION
+MYIP=$(curl -sS ifconfig.me)
+echo "Checking VPS"
 clear
+# Color Validation
 w="\033[97m"  # Putih
 y="\033[93m"  # Kuning
 r="\033[91m"  # Merah
@@ -8,10 +10,6 @@ u="\033[35m"  # Ungu
 c="\033[96m"  # Cyan
 g="\033[92m"  # Hijau
 NC="\033[0m"  # Tanpa Warna
-MYIP=$(curl -sS ifconfig.me)
-echo "Checking VPS"
-clear
-# Color Validation
 DF='\e[39m'
 Bold='\e[1m'
 Blink='\e[5m'
@@ -103,7 +101,7 @@ echo -e "\033[1;35m│\033[0m\e[38;5;200m PROXY :\e[0m $status_haproxy  \e[0m│
 echo -e "\033[1;35m╰─────────────────────────────────────────────────╯\033[0m"
 echo -e   ""
 echo -e "\033[1;36m╭─────────────────────────────────────────────╮\033[0m"
-echo -e "\033[1;36m│\033[0m \033[1;97m\033[45m            RAM INFO              \033[0m\033[1;36m│\033[0m"
+echo -e "\033[1;36m│\033[0m \033[1;97m\033[45m                RAM INFO                  \033[0m\033[1;36m│\033[0m"
 echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
 echo -e ""
 echo -e "\033[1;36m╭─────────────────────────────────────────────╮\033[0m"
@@ -112,7 +110,7 @@ echo -e "\e[1;32m RAM TOTAL  \e[0m: $tram MB"
 echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
 echo -e   ""
 echo -e "\033[1;36m╭─────────────────────────────────────────────╮\033[0m"
-echo -e "\033[1;36m│\033[0m \033[1;97m\033[45m            MENU              \033[0m\033[1;36m│\033[0m"
+echo -e "\033[1;36m│\033[0m \033[1;97m\033[45m                 MENU                    \033[0m\033[1;36m│\033[0m"
 echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
 echo -e   ""
 echo -e "\e[1;36m 1 \e[0m: Menu SSH"
@@ -126,10 +124,10 @@ echo -e "\e[1;36m 8 \e[0m: Clear RAM Cache"
 echo -e "\e[1;36m 9 \e[0m: Reboot VPS"
 echo -e "\e[1;36m x \e[0m: Exit Script"
 echo -e   ""
-echo -e "\e[1;33m -------------------------------------------------\e[0m"
-echo -e "\e[1;32m Client Name \e[0m: $XYR"
+echo -e "\033[1;36m╭─────────────────────────────────────────────╮\033[0m"
+echo -e "\e[1;32m Client Name \e[0m: $name"
 echo -e "\e[1;32m Expired     \e[0m: $Exp2"
-echo -e "\e[1;33m -------------------------------------------------\e[0m"
+echo -e "\033[1;36m╰─────────────────────────────────────────────╯\033[0m"
 echo -e   ""
 echo -e "\e[1;36m --------------------t.me/XYR---------------------\e[0m"
 echo -e   ""
