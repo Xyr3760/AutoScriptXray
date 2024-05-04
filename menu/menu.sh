@@ -34,6 +34,10 @@ LIGHT='\033[0;37m'
 # VPS Information
 #Domain
 domain=$(cat /etc/xray/domain)
+#RAM
+ram=$(free -m | awk 'NR==2 {print $2}')
+#CITY
+city=$(cat /etc/xray/city)
 #Status certificate
 modifyTime=$(stat $HOME/.acme.sh/${domain}_ecc/${domain}.key | sed -n '7,6p' | awk '{print $2" "$3" "$4" "$5}')
 modifyTime1=$(date +%s -d "${modifyTime}")
@@ -89,7 +93,6 @@ echo -e   ""
 echo -e "\033[1;36m╭─────────────────────────────────────────────╮\033[0m"
 echo -e "\033[1;36m│\033[38;5;208m 💻 OS              : $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g')     \033[0m\033[1;36m \033[0m"
 echo -e "\033[1;36m│\033[38;5;208m 🖥️ RAM             : $(free -m | awk 'NR==2 {print $2 " MB"}')    \033[0m\033[1;36m \033[0m"
-echo -e "\033[1;36m│\033[38;5;208m 🔄 SWAP            : $(free -m | awk 'NR==2 {print $3 " MB"}')    \033[0m\033[1;36m \033[0m"
 echo -e "\033[1;36m│\033[38;5;208m 🌆 CITY            : $(cat /etc/xray/city)   \033[0m\033[1;36m \033[0m"
 echo -e "\033[1;36m│\033[38;5;208m 📡 ISP             : $(cat /etc/xray/isp)    \033[0m\033[1;36m \033[0m"
 echo -e "\033[1;36m│\033[38;5;208m 🌐 IP              : $(curl -s ipv4.icanhazip.com)     \033[0m\033[1;36m \033[0m"
